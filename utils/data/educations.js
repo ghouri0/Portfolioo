@@ -1,20 +1,20 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor Degree",
-    duration: "2020 - Present",
-    institution: "National University of Bangladesh",
+    title: "BS Software Engineering",
+    duration: "2019 - 2023",
+    institution: "COMSATS University, Islamabad",
   },
   {
     id: 2,
-    title: "Higher Secondary Certificate",
-    duration: "2018 - 2020",
-    institution: "Noakhali Islamia Kamil Madrasah",
+    title: "ICS",
+    duration: "2016 - 2018",
+    institution: "Punjab College, Rawalpindi",
   },
-  {
-    id: 3,
-    title: "Secondary School Certificate",
-    duration: "2008 - 2018",
-    institution: "Baitus Saif Islamia Madrasah",
-  }
+  // {
+  //   id: 3,
+  //   title: "Secondary School Certificate",
+  //   duration: "2008 - 2018",
+  //   institution: "Baitus Saif Islamia Madrasah",
+  // }
 ]

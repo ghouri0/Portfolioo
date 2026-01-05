@@ -1,8 +1,8 @@
 @use "tailwindcss";
 
-:root {
-  --foreground-rgb: rgb(211, 216, 232);
-}
+// :root {
+//   --foreground-rgb: rgb(211, 216, 232);
+// }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -10,10 +10,21 @@
   }
 }
 
+:root {
+  --foreground-rgb: 210, 214, 230;
+  --bg-start: #0b1020;
+  --bg-mid: #121a33;
+  --bg-end: #0e1328;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #0d1224;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #1a2352 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, #1f2a60 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg-start), var(--bg-mid), var(--bg-end));
 }
+
 
 #sticky-card-1 {
   --index: 1;
