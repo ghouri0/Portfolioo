@@ -1,44 +1,66 @@
 // @flow strict
 import Link from "next/link";
 
-
 function Navbar() {
   return (
-    <nav className="bg-transparent">
-      <div className="flex items-center justify-between py-5">
-        <div className="flex flex-shrink-0 items-center">
-          <Link
-            href="/"
-            className=" text-[#16f2b3] text-3xl font-bold">
-            Muhammad Ali
-          </Link>
+    <nav className="sticky top-0 z-50 w-full bg-[#081412]/70 backdrop-blur-md border-b border-emerald-900/30">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
+
+        {/* Logo / Brand */}
+        <Link
+          href="/"
+          className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent hover:opacity-90 transition-opacity"
+        >
+          Muhammad Ali
+        </Link>
+
+        {/* Navigation Links */}
+        <ul className="hidden md:flex items-center gap-2 text-sm font-medium tracking-wide">
+
+          {[
+            { label: "ABOUT", href: "/#about" },
+            { label: "EXPERIENCE", href: "/#experience" },
+            { label: "SKILLS", href: "/#skills" },
+            { label: "EDUCATION", href: "/#education" },
+            { label: "BLOGS", href: "/blog" },
+            { label: "PROJECTS", href: "/#projects" },
+          ].map((item) => (
+            <li key={item.label}>
+              <Link
+                href={item.href}
+                className="group relative px-4 py-2 text-gray-200 transition-colors duration-300 hover:text-emerald-300"
+              >
+                {item.label}
+
+                {/* underline glow */}
+                <span className="absolute inset-x-0 -bottom-0.5 h-[1px] bg-gradient-to-r from-emerald-400 to-teal-400 scale-x-0 transition-transform duration-300 group-hover:scale-x-100 origin-left"></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile Placeholder (future toggle) */}
+        <div className="md:hidden">
+          <button
+            aria-label="Open Menu"
+            className="rounded-lg border border-emerald-800/40 p-2 text-emerald-400 hover:bg-emerald-900/20 transition-colors"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.8}
+              stroke="currentColor"
+              className="h-6 w-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+            </svg>
+          </button>
         </div>
 
-        <ul className="mt-4 flex h-screen max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100" id="navbar-default">
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#about">
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">ABOUT</div>
-            </Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#experience"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EXPERIENCE</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#skills"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">SKILLS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#education"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EDUCATION</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/blog"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">BLOGS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#projects"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div></Link>
-          </li>
-        </ul>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;

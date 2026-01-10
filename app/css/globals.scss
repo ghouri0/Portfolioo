@@ -9,19 +9,18 @@
     --foreground-rgb: 255, 255, 255;
   }
 }
-
 :root {
-  --foreground-rgb: 210, 214, 230;
-  --bg-start: #0b1020;
-  --bg-mid: #121a33;
-  --bg-end: #0e1328;
+  --foreground-rgb: 215, 225, 220;
+  --bg-start: #081412;
+  --bg-mid: #0f1f1a;
+  --bg-end: #0a1613;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background:
-    radial-gradient(1200px 600px at 10% -10%, #1a2352 0%, transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, #1f2a60 0%, transparent 55%),
+    radial-gradient(1100px 550px at 15% -10%, #163a2d 0%, transparent 60%),
+    radial-gradient(900px 450px at 85% 15%, #1e4d3b 0%, transparent 55%),
     linear-gradient(180deg, var(--bg-start), var(--bg-mid), var(--bg-end));
 }
 
@@ -43,6 +42,6 @@ body {
 }
 
 .sticky-card {
-  // padding-top: calc(var(--index) * 2.5rem);
-  top: calc(var(--index) * 4rem);
+  top: calc(96px + (var(--index) * 4rem));
 }
+

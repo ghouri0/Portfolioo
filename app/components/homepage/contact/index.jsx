@@ -11,78 +11,75 @@ import ContactForm from './contact-form';
 
 function ContactSection() {
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+    <div
+  id="contact"
+  className="relative my-12 lg:my-20 mt-24 text-white"
+>
+  {/* Vertical section label */}
+  <div className="hidden lg:flex flex-col items-center absolute top-24 -right-10">
+    <span className="bg-[#0f1e1a] text-[#16f2b3] rotate-90 px-6 py-2 text-xs tracking-widest uppercase rounded-md border border-[#16f2b3]/20">
+      Contact
+    </span>
+    <span className="h-36 w-[1px] bg-[#16f2b3]/30 mt-2" />
+  </div>
+
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+    
+    {/* Form */}
+    <ContactForm />
+
+    {/* Info */}
+    <div className="lg:w-3/4">
+      <div className="flex flex-col gap-6 lg:gap-8">
+
+        {/* Email */}
+        <p className="flex items-center gap-4 text-sm md:text-lg text-white/80">
+          <MdAlternateEmail
+            size={32}
+            className="p-2 rounded-full bg-[#0f1e1a] text-[#16f2b3] border border-[#16f2b3]/20"
+          />
+          <span>{personalData.email}</span>
+        </p>
+
+        {/* Phone */}
+        <p className="flex items-center gap-4 text-sm md:text-lg text-white/80">
+          <IoMdCall
+            size={32}
+            className="p-2 rounded-full bg-[#0f1e1a] text-[#16f2b3] border border-[#16f2b3]/20"
+          />
+          <span>{personalData.phone}</span>
+        </p>
+
+        {/* Location */}
+        <p className="flex items-center gap-4 text-sm md:text-lg text-white/80">
+          <CiLocationOn
+            size={32}
+            className="p-2 rounded-full bg-[#0f1e1a] text-[#16f2b3] border border-[#16f2b3]/20"
+          />
+          <span>{personalData.address}</span>
+        </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <ContactForm />
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <MdAlternateEmail
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>{personalData.email}</span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <IoMdCall
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.phone}
-              </span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <CiLocationOn
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.address}
-              </span>
-            </p>
-          </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
-              <IoLogoGithub
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
-              <BiLogoLinkedin
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            {/* <Link target="_blank" href={personalData.twitter}>
-              <FaXTwitter
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.stackOverflow}>
-              <FaStackOverflow
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link> */}
-            {/* <Link target="_blank" href={personalData.facebook}>
-              <FaFacebook
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link> */}
-          </div>
-        </div>
+
+      {/* Social links */}
+      <div className="mt-10 lg:mt-16 flex items-center gap-6">
+        <Link target="_blank" href={personalData.github}>
+          <IoLogoGithub
+            size={44}
+            className="p-3 rounded-full bg-[#0f1e1a] text-[#16f2b3] border border-[#16f2b3]/20 hover:bg-[#16f2b3]/10 transition"
+          />
+        </Link>
+
+        <Link target="_blank" href={personalData.linkedIn}>
+          <BiLogoLinkedin
+            size={44}
+            className="p-3 rounded-full bg-[#0f1e1a] text-[#16f2b3] border border-[#16f2b3]/20 hover:bg-[#16f2b3]/10 transition"
+          />
+        </Link>
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 

@@ -9,73 +9,94 @@ import GlowCard from "../../helper/glow-card";
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <Image
-        src="/section.svg"
-        alt="Hero"
-        width={1572}
-        height={795}
-        className="absolute top-0 -z-10"
-      />
+  <div
+  id="experience"
+  className="relative z-40 my-16 lg:my-28 border-t border-emerald-900/30"
+>
+  {/* Background Accent */}
+  <Image
+    src="/section.svg"
+    alt="section background"
+    width={1572}
+    height={795}
+    className="absolute top-0 -z-10 opacity-50"
+  />
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Experiences
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
+  {/* Section Header */}
+  <div className="flex justify-center py-6 lg:py-12">
+    <div className="flex items-center gap-4">
+      <span className="w-20 h-[1px] bg-gradient-to-r from-transparent to-emerald-400"></span>
 
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} />
-            </div>
-          </div>
+      <span className="bg-[#0f1f1a] text-emerald-300 px-6 py-2 text-lg font-semibold tracking-widest rounded-md border border-emerald-800/40">
+        EXPERIENCE
+      </span>
 
-          <div>
-            <div className="flex flex-col gap-6">
-              {
-                experiences.map(experience => (
-                  <GlowCard key={experience.id} identifier={`experience-${experience.id}`}>
-                    <div className="p-3 relative">
-                      <Image
-                        src="/blur-23.svg"
-                        alt="Hero"
-                        width={1080}
-                        height={200}
-                        className="absolute bottom-0 opacity-80"
-                      />
-                      <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {experience.duration}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-x-8 px-3 py-5">
-                        <div className="text-violet-500  transition-all duration-300 hover:scale-125">
-                          <BsPersonWorkspace size={36} />
-                        </div>
-                        <div>
-                          <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {experience.title}
-                          </p>
-                          <p className="text-sm sm:text-base">
-                            {experience.company}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </GlowCard>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
+      <span className="w-20 h-[1px] bg-gradient-to-l from-transparent to-teal-400"></span>
     </div>
+  </div>
+
+  {/* Content */}
+  <div className="py-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+
+      {/* Lottie Animation */}
+      <div className="flex justify-center items-start">
+        <div className="w-full max-w-md">
+          <AnimationLottie animationPath={experience} />
+        </div>
+      </div>
+
+      {/* Experience Cards */}
+      <div>
+        <div className="flex flex-col gap-8">
+          {experiences.map((exp) => (
+            <GlowCard
+              key={exp.id}
+              identifier={`experience-${exp.id}`}
+            >
+              <div className="relative p-4 lg:p-5 rounded-xl">
+
+                {/* Subtle Bottom Glow */}
+                <Image
+                  src="/blur-23.svg"
+                  alt="blur"
+                  width={1080}
+                  height={200}
+                  className="absolute bottom-0 left-0 w-full opacity-40 pointer-events-none"
+                />
+
+                {/* Duration */}
+                <div className="flex justify-center mb-3">
+                  <p className="text-xs sm:text-sm font-medium tracking-wide text-emerald-300">
+                    {exp.duration}
+                  </p>
+                </div>
+
+                {/* Card Content */}
+                <div className="flex items-center gap-x-6 px-2 py-4">
+                  <div className="text-emerald-400 transition-transform duration-300 hover:scale-110">
+                    <BsPersonWorkspace size={34} />
+                  </div>
+
+                  <div>
+                    <p className="text-base sm:text-lg font-semibold uppercase tracking-wide text-gray-100 mb-1">
+                      {exp.title}
+                    </p>
+                    <p className="text-sm sm:text-base text-gray-300">
+                      {exp.company}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </GlowCard>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
   );
 };
 

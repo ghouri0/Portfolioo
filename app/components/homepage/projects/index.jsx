@@ -4,33 +4,41 @@ import ProjectCard from './project-card';
 const Projects = () => {
 
   return (
-    <div id='projects' className="relative z-50  my-12 lg:my-24">
-      <div className="sticky top-10">
-        <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
-        <div className="flex items-center justify-start relative">
-          <span className="bg-[#1a1443] absolute left-0  w-fit text-white px-5 py-3 text-xl rounded-md">
-            PROJECTS
-          </span>
-          <span className="w-full h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
+  <div
+  id="projects"
+  className="relative z-40 my-12 lg:my-24 pt-24"
+>
+  {/* Section Header */}
+  <div className='relative'>
+  <div className="sticky top-[88px] z-30 bg-transparent">
+    {/* ambient glow */}
+    <div className="w-[100px] h-[100px] bg-[#16f2b3]/15 rounded-full absolute -top-6 left-0 blur-3xl pointer-events-none" />
 
-      <div className="pt-24">
-        <div className="flex flex-col gap-6">
-          {projectsData.slice(0, 4).map((project, index) => (
-            <div
-              id={`sticky-card-${index + 1}`}
-              key={index}
-              className="sticky-card w-full mx-auto max-w-2xl sticky"
-            >
-              <div className="box-border flex items-center justify-center rounded shadow-[0_0_30px_0_rgba(0,0,0,0.3)] transition-all duration-[0.5s]">
-                <ProjectCard project={project} />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="flex items-center relative">
+      <span className="bg-[#0f1e1a] text-[#16f2b3] px-6 py-2 text-sm tracking-widest uppercase rounded-md border border-[#16f2b3]/20">
+        Projects
+      </span>
+      <span className="ml-4 w-full h-[1px] bg-gradient-to-r from-[#16f2b3]/40 to-transparent"></span>
     </div>
+  </div>
+  </div>
+
+  {/* Cards */}
+  <div className="pt-24">
+    <div className="flex flex-col gap-8">
+      {projectsData.slice(0, 4).map((project, index) => (
+        <div
+          id={`sticky-card-${index + 1}`}
+          key={index}
+          className="sticky-card sticky w-full mx-auto max-w-2xl"
+        >
+          <ProjectCard project={project} />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
   );
 };
 
