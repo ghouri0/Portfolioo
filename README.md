@@ -1,7 +1,5 @@
 Muhammad Ali | Full-Stack Developer Portfolio
 
-Live Demo
-
 A modern, professional portfolio website showcasing my skills, projects, experience, and education as a full-stack web developer. Built with Next.js, React, and Tailwind CSS, the portfolio demonstrates responsive design, smooth animations, and modern UI/UX practices.
 
 🛠 Technologies Used
@@ -94,13 +92,11 @@ I am Muhammad Ali, a full-stack web developer specializing in building scalable 
 
 📫 Contact
 
-Email: your-email@example.com
+Email: alimuhammadghouri0@gmail.com
 
-Phone: +92-XXXXXXXXXX
+Phone: +92-3121531106
 
-LinkedIn: linkedin.com/in/yourprofile
-
-GitHub: github.com/yourusername
+GitHub: github.com/ghouri0
 
 ⭐ Contributions
 
