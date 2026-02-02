@@ -45,3 +45,7 @@ body {
   top: calc(96px + (var(--index) * 4rem));
 }
 
+html {
+  scroll-behavior: smooth;
+}
+

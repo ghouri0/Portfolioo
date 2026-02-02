@@ -1,6 +1,6 @@
 "use client";
 // @flow strict
-import { isValidEmail } from "@/utils/check-email";
+// import { isValidEmail } from "@/utils/check-email";
 import axios from "axios";
 import { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
@@ -93,10 +93,10 @@ function ContactForm() {
           required
           value={userInput.email}
           onChange={(e) => setUserInput({ ...userInput, email: e.target.value })}
-          onBlur={() => {
-            checkRequired()
-            setError({ ...error, email: !isValidEmail(userInput.email) })
-          }}
+          // onBlur={() => {
+          //   checkRequired()
+          //   setError({ ...error, email: !isValidEmail(userInput.email) })
+          // }}
         />
         {error.email && (
           <p className="text-xs text-red-400">
