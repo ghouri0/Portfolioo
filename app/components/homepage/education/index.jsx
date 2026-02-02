@@ -1,105 +1,65 @@
 // @flow strict
 import { educations } from "@/utils/data/educations";
-import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
-import lottieFile from '../../../assets/lottie/study.json';
 import AnimationLottie from "../../helper/animation-lottie";
-import GlowCard from "../../helper/glow-card";
+import lottieFile from '../../../assets/lottie/study.json';
 
 function Education() {
   return (
-    <div
-  id="education"
-  className="relative my-12 lg:my-24 border-t border-[#16f2b3]/20"
->
-  {/* Background pattern */}
-  <Image
-    src="/section.svg"
-    alt="Section background"
-    width={1572}
-    height={795}
-    className="absolute top-0 -z-10 opacity-70"
-  />
-
-  {/* top divider */}
-  <div className="flex justify-center -translate-y-[1px]">
-    <div className="w-3/4">
-      <div className="h-[1px] bg-gradient-to-r from-transparent via-[#16f2b3]/40 to-transparent" />
-    </div>
-  </div>
-
-  {/* Section heading */}
-  <div className="flex justify-center my-6 lg:py-10">
-    <div className="flex items-center gap-4">
-      <span className="w-20 h-[1px] bg-[#16f2b3]/30" />
-      <span className="bg-[#0f1e1a] text-[#16f2b3] px-6 py-2 text-sm tracking-widest uppercase rounded-md border border-[#16f2b3]/20">
-        Education
-      </span>
-      <span className="w-20 h-[1px] bg-[#16f2b3]/30" />
-    </div>
-  </div>
-
-  {/* Content */}
-  <div className="py-8">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-      
-      {/* Animation */}
-      <div className="flex justify-center items-start">
-        <div className="w-3/4 h-3/4 opacity-90">
-          <AnimationLottie animationPath={lottieFile} />
-        </div>
+    <section
+      id="education"
+      className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20"
+    >
+      {/* Section Header */}
+      <div className="text-center mb-16">
+        <p className="text-sm font-semibold uppercase tracking-widest text-emerald-400">
+          Education
+        </p>
+        <h2 className="mt-2 text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          My Academic Journey
+        </h2>
+        <div className="mt-2 w-24 h-[2px] bg-gradient-to-r from-emerald-400 to-teal-400 mx-auto rounded" />
       </div>
 
-      {/* Education cards */}
-      <div>
-        <div className="flex flex-col gap-6">
-          {educations.map((education) => (
-            <GlowCard
-              key={education.id}
-              identifier={`education-${education.id}`}
-              className="bg-[#0b1a16]/80 border border-[#16f2b3]/10 hover:border-[#16f2b3]/30 transition-all"
-            >
-              <div className="p-5 relative text-white/80">
-                
-                {/* subtle bottom blur */}
-                <Image
-                  src="/blur-23.svg"
-                  alt=""
-                  width={1080}
-                  height={200}
-                  className="absolute bottom-0 opacity-40 pointer-events-none"
-                />
+      {/* Content Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        {/* Lottie Animation */}
+        <div className="flex justify-center lg:justify-start">
+          <div className="w-full max-w-xs sm:max-w-sm">
+            <AnimationLottie animationPath={lottieFile} />
+          </div>
+        </div>
 
-                <div className="flex justify-center mb-2">
-                  <p className="text-xs tracking-widest text-[#16f2b3] uppercase">
-                    {education.duration}
+        {/* Education Cards */}
+        <div className="flex flex-col gap-6">
+          {educations.map((edu) => (
+            <div
+              key={edu.id}
+              className="bg-[#0b1a16]/80 border border-[#16f2b3]/10 rounded-2xl p-6 hover:border-[#16f2b3]/30 transition-all"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-[#16f2b3]/80 flex-shrink-0 mt-1">
+                  <BsPersonWorkspace size={28} />
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <p className="text-xs sm:text-sm font-medium tracking-widest text-emerald-400 uppercase">
+                    {edu.duration}
+                  </p>
+                  <p className="text-base sm:text-lg font-semibold text-white">
+                    {edu.title}
+                  </p>
+                  <p className="text-sm sm:text-base text-white/70">
+                    {edu.institution}
                   </p>
                 </div>
-
-                <div className="flex items-start gap-x-6 px-2 py-4">
-                  <div className="text-[#16f2b3]/70">
-                    <BsPersonWorkspace size={32} />
-                  </div>
-
-                  <div>
-                    <p className="text-base sm:text-lg font-medium uppercase text-white">
-                      {education.title}
-                    </p>
-                    <p className="text-sm sm:text-base text-white/70 mt-1">
-                      {education.institution}
-                    </p>
-                  </div>
-                </div>
               </div>
-            </GlowCard>
+            </div>
           ))}
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
+    </section>
   );
-};
+}
 
 export default Education;
