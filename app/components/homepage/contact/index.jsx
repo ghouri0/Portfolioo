@@ -31,7 +31,7 @@ function ContactSection() {
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         {/* Contact Form */}
-        <ContactForm />
+        {/* <ContactForm /> */}
 
         {/* Contact Info & Socials */}
         <div className="flex flex-col justify-start gap-8">
