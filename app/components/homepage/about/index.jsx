@@ -11,12 +11,12 @@ function AboutSection() {
     >
       {/* ================= IMAGE ================= */}
       <div className="flex-shrink-0 flex justify-center lg:justify-start">
-        <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-emerald-500">
+        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-emerald-500">
           <Image
             src={personalData.profile}
             alt="Muhammad Ali"
             fill
-            className="object-cover rounded-full"
+            className=" object-cover p-1.5 rounded-full"
           />
         </div>
       </div>
@@ -37,13 +37,11 @@ function AboutSection() {
         <p className="text-sm sm:text-base text-white/75 leading-relaxed">
           {personalData.description}
         </p>
-        <p className="text-sm sm:text-base text-white/75 leading-relaxed">
+        {/* <p className="text-sm sm:text-base text-white/75 leading-relaxed">
           I enjoy working across the entire product lifecycle — from planning
-          and architecture to development, optimization, and deployment. I
-          value clean code, thoughtful UX, and collaboration within fast-moving
-          teams.
-        </p>
-
+          and architecture to development, optimization, and deployment. I value
+          clean code, thoughtful UX, and collaboration within fast-moving teams.
+        </p> */}
         {/* Highlights */}
         <div className="mt-4 flex flex-wrap gap-3 justify-center lg:justify-start">
           {[
